@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number"><br><br>
+
+    <button class="calc-btn" data-op="+">Add</button>
+    <button class="calc-btn" data-op="-">Subtract</button>
+    <button class="calc-btn" data-op="*">Multiply</button>
+    <button class="calc-btn" data-op="/">Divide</button>
+
+    <p id="result">Result: </p>
+
+    <script>
+        $(document).ready(function() {
+            $(".calc-btn").click(function() {
+                let a = parseFloat($("#num1").val());
+                let b = parseFloat($("#num2").val());
+                let op = $(this).data("op");
+                let res = 0;
+
+                if (isNaN(a) || isNaN(b)) {
+                    $("#result").text("Result: Please enter valid numbers");
+                    return;
+                }
+
+                switch(op) {
+                    case '+': res = a + b; break;
+                    case '-': res = a - b; break;
+                    case '*': res = a * b; break;
+                    case '/': res = b !== 0 ? a / b : "Cannot divide by zero"; break;
+                }
+
+                $("#result").text("Result: " + res);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table and Image Animation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 300px;
+        }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        tr:nth-child(even) {
+            background-color: #e10606;
+        }
+        #container {
+            position: relative;
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Table and Image Animation</h2>
+    <div id="container">
+        <table>
+            <tr><td>Data 1</td><td>Data 2</td><td>Data 3</td></tr>
+            <tr><td>Data 4</td><td>Data 5</td><td>Data 6</td></tr>
+            <tr><td>Data 7</td><td>Data 8</td><td>Data 9</td></tr>
+            <tr><td>Data 10</td><td>Data 11</td><td>Data 12</td></tr>
+        </table>
+        <img src="~/Downloads/ghibli.jpg" alt="Sample Image">
+    </div>
+    <button id="moveBtn">Move Right to Left</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#moveBtn").click(function() {
+                $("#container").animate({ left: "0%" }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- students/templates/students/student_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details Form</title>
+</head>
+<body>
+    <h2>Enter Student Details</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if student_data %}
+        <h3>Submitted Student Data:</h3>
+        <textarea rows="10" cols="80" readonly>{{ student_data }}</textarea><br>
+        <label>Total Percentage: {{ percentage }}%</label>
+    {% endif %}
+</body>
+</html>
