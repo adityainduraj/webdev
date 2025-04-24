@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="l1q3.css">
+</head>
+<body>
+<div class="row">
+    <div class="container">
+        <p>Choose a backround color</p>
+        <select id="bg-color">
+        <option value="" selected disabled hidden>Choose Yellow!</option>
+        <option value="y">Yellow</option>
+        <option value="g">Green</option>
+        <option value="r">Red</option>
+        <option value="b">Blue</option>
+        <option value="o">Orange</option>
+        <option value="m">Maroon</option>
+        </select>
+        <br>
+        <br>
+        <p>Choose a font</p>
+        <select id="font">
+        <option value="" selected disabled hidden>Choose Segue UI!</option>
+        <option value="b">Bodoni</option>
+        <option value="s">Comic Sans</option>
+        <option value="g">Georgia</option>
+        <option value="t">Times New Roman</option>
+        <option value="l">Lucida</option>
+        <option value="i">Impact</option>
+        </select>
+        <br>
+        <br>
+        <p>Specify a Numeric Font Size</p>
+        <input class="num" type="number">
+        <br>
+        <sub>Enter 25!</sub>
+        <br>
+        <br>
+        <p>Choose a border style</p>
+        <div class="radio-button">
+        <input type="radio" id="none" value="None" name="rad">
+        <label for="none">None</label>
+        <br>
+        <input type="radio" id="dotted" value="Dotted" name="rad">
+        <label for="dotted">Dotted</label>
+        <br>
+        <input type="radio" id="solid" value="Solid" name="rad">
+        <label for="solid">Solid</label>
+        </div>
+        <br>
+        <div class="pic">
+        <input type="checkbox" id="chk">
+        <p class="pic-text">Add the Default Picture</p>
+        </div>
+        <br>
+        <div class="grt">
+            <p>Enter the greeting below</p>
+            <textarea name="txt" class="txt"></textarea>
+        </div>
+        <br>
+        <br>
+        <button class="btn">Update</button>
+        <br>
+        <br>
+    </div>
+    <div class="container" id="cnt">
+        <img src="/Lab1/Images/bohrday.jpg">
+    </div>
+</div>
+<script>
+    $(function(){
+    $('input[name="rad"]').click(function(){
+        var $radio = $(this);
+        if ($radio.data('waschecked') == true)
+        {
+            $radio.prop('checked', false);
+            $radio.data('waschecked', false);
+        }
+        else
+            $radio.data('waschecked', true);
+        $radio.siblings('input[name="rad"]').data('waschecked', false);
+    });
+});
+</script>
+</body>
+</html>

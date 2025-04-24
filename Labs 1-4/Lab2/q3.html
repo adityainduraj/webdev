@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Layout</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+        padding-top: 20px;
+        }
+        .top-section {
+            background-color: #1c7bda;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }        
+        .bottom-section {
+            padding: 1rem 0;
+        }        
+        .bottom-part {
+            padding: 1.5rem;
+            background-color: #c5e2ff;
+            border-radius: 8px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }        
+        .btn-group {
+            margin-right: 0.5rem;
+        }        
+        .input-group {
+            margin-bottom: 1rem;
+        }        
+        h5 {
+            margin-bottom: 1rem !important;
+        }        
+        .mb-3 {
+            margin-bottom: 1rem !important;
+        }        
+        .mt-3 {
+            margin-top: 1rem !important;
+        }
+        .btn-primary {
+            background-color: rgb(50, 218, 59);
+            color: rgb(109, 20, 20);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-section">
+            <h1 class="mb-4 fw-bold">Welcome</h1>
+            <div class="input-group w-50 mx-auto mb-3">
+                <span class="input-group-text">Name</span>
+                <input type="text" class="form-control" placeholder="Enter your name">
+            </div>
+            <button class="btn btn-primary fw-bold">Submit</button>
+        </div>
+        <div class="row bottom-section">
+            <div class="col-md-4 mb-3">
+                <div class="bottom-part h-100">
+                    <h5 class="mb-3">Section 1</h5>
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex flex-wrap justify-content-center gap-2">
+                            <button class="btn btn-secondary">Left</button>
+                            <button class="btn btn-secondary">Middle</button>
+                            <button class="btn btn-secondary">Right</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="bottom-part h-100">
+                    <h5 class="mb-3">Section 2</h5>
+                    <div class="input-group">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <button class="btn btn-success mt-3 fw-bold">Save</button>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="bottom-part h-100">
+                    <h5 class="mb-3">Section 3</h5>
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-danger fw-bold">Action</button>
+                        <span class="badge bg-warning text-dark ms-2">Alert</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

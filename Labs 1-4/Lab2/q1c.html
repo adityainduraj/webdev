@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Student Info Collection</title>
+    <style>
+        body {
+            font-family: "Anek Telugu", sans-serif;
+            margin: 20px;
+            background-color: rgb(218, 104, 180);
+            text-shadow: 2px 2px 2px rgba(5, 3, 7, 0.761);
+        }
+        .container {
+            font-weight: bold;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 3px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            line-height:30px;
+            font-size: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        td {
+            padding: 10px;
+        }
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="date"] {
+            width: 80%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px black;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+            display: inline-block;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+            display: inline-block;
+            box-shadow: 1px 1px 5px black;
+        }
+        .button {
+            text-align: center;
+        }
+        button {
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #05f34c;
+            color: black;
+            cursor: pointer;
+            font-size: 30px;
+            border: 3px solid black;
+            transition: all 0.5s ease-in-out;
+        }
+        button:hover {
+            background-color: black;
+            color: #05f34c;
+        }
+        td {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Info Collection</h2>
+        <form>
+            <table>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Date of Birth:</label></td>
+                    <td><input type="date" id="dob" name="dob" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label>Gender:</label></td>
+                    <td class="gender">
+                        <input type="radio" name="rad" id="Radio0" checked="checked" data-waschecked="true" />
+                        <label for="male">Male</label>
+                        <input type="radio" name="rad" id="Radio0" checked="checked" data-waschecked="true" />
+                        <label for="female">Female</label>
+                        <input type="radio" name="rad" id="Radio0" checked="checked" data-waschecked="true" />
+
+                        <label for="nill">Prefer Not to Say</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="hobbies">Hobbies:</label></td>
+                    <td>
+                        <input type="checkbox" id="arts" name="hobbies" value="arts">
+                        <label for="arts">Arts</label>
+                        <br>
+                        <input type="checkbox" id="music" name="hobbies" value="music">
+                        <label for="music">Music</label>
+                        <br>
+                        <input type="checkbox" id="dance" name="hobbies" value="dance">
+                        <label for="dance">Dance</label>
+                        <br>
+                        <input type="checkbox" id="embroidery" name="hobbies" value="embroidery">
+                        <label for="embroidery">Embroidery</label>
+                        <br>
+                        <input type="checkbox" id="extempore" name="hobbies" value="extempore">
+                        <label for="extempore">Extempore</label>
+                        <br>
+                        <input type="checkbox" id="reading" name="hobbies" value="reading">
+                        <label for="reading">Reading</label>
+                    </td>
+                </tr>
+                <tr class="button">
+                    <td colspan="2">
+                        <button type="submit">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

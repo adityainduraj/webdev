@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Table and Image</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="l1q1.css">
+</head>
+<body>
+  <button id="btn">Affirm</button>
+    <div id="container">
+      <table id="tab">
+        <caption>
+          Hiring JQuery Specialists
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" class="hel">Unique ID</th>
+            <th scope="col" class="hel">Designation</th>
+            <th scope="col" class="hel">Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">097869</th>
+            <td>HR Subordinate</td>
+            <td>Lufthansa Headquarters</td>
+          </tr>
+          <tr>
+            <th scope="row">120098</th>
+            <td>Assistant Illustrator</td>
+            <td>Disney Advertisement Division</td>
+          </tr>
+          <tr>
+            <th scope="row">132901</th>
+            <td>Lifeguard</td>
+            <td>Tampa Bay Rescue Squad</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row" colspan="2" class="hel">Average New Recruit</th>
+            <td class="hel">Ex-Company</td>
+          </tr>
+        </tfoot>
+      </table>
+      <img src="/Lab1/Images/hire.jpeg" alt="you're-hired" id="ima">
+    </div>
+    <script>
+        $(document).ready(function() {
+            let offsetX = 50;
+            $("#btn").click(function() {
+                $("#tab, #ima").each(function() {
+                    let currentX = parseInt($(this).css("left")) || 0;
+                    $(this).css({
+                        "left": (currentX - offsetX) + "px"
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

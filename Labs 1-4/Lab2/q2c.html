@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee CRUD Operations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            color: #fff;
+        }
+        body {
+            font-family: "Anek Telugu", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #77aaff;
+        }
+        .container {
+            max-width: 900px;
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            color: #0b49b4;
+            border-radius: 12px;
+        }
+        header {
+            background: rgba(15, 109, 3, 0.732);
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0b49b4 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .main {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .main h2 {
+            color: #0b49b4;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0b49b4;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        .btn:hover {
+            background: #0b49b4;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: none;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #0b49b4;
+            color: #fff;
+        }
+        .actions {
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+        .name {
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+        .ribbon {
+            display: grid;
+            grid-auto-flow: column;
+        }
+        .home:hover {
+            background-color: rgba(18, 223, 110, 0.454);
+        }
+        .about:hover {
+            background-color: rgba(18, 223, 110, 0.454);
+        }
+        .contact:hover {
+            background-color: rgba(18, 223, 110, 0.454);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Employee Management</h1>
+            </div>
+            <nav>
+                <ul class="ribbon">
+                    <li class="home"><a href="#">Home</a></li>
+                    <li class="about"><a href="#">About</a></li>
+                    <li class="contact"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container main">
+        <h2>Employee CRUD Operations</h2>
+        <form id="employeeForm">
+            <div class="form-group">
+                <label for="empName">Employee Name:</label>
+                <input type="text" id="empName" name="empName" required>
+            </div>
+            <div class="form-group">
+                <label for="empAge">Employee Age:</label>
+                <input type="number" id="empAge" name="empAge" required>
+            </div>
+            <div class="form-group">
+                <label for="empDept">Department:</label>
+                <select id="empDept" name="empDept" required>
+                    <option value="HR">Human Resource</option>
+                    <option value="Sales">Sales</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="R&D">Research & Development</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Marketing">Marketing</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Add Employee</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="name">Name</th>
+                    <th>Age</th>
+                    <th>Department</th>
+                    <th class="actions">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('employeeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('empName').value;
+            const age = document.getElementById('empAge').value;
+            const dept = document.getElementById('empDept').value;
+
+            const table = document.getElementById('employeeTable');
+            const row = table.insertRow();
+            row.insertCell(0).innerText = name;
+            row.insertCell(1).innerText = age;
+            row.insertCell(2).innerText = dept;
+            const actions = row.insertCell(3);
+            actions.innerHTML = '<button onclick="editEmployee(this)">Edit</button> <button onclick="deleteEmployee(this)">Delete</button>';
+
+            document.getElementById('employeeForm').reset();
+        });
+
+        function editEmployee(button) {
+            const row = button.parentElement.parentElement;
+            document.getElementById('empName').value = row.cells[0].innerText;
+            document.getElementById('empAge').value = row.cells[1].innerText;
+            document.getElementById('empDept').value = row.cells[2].innerText;
+            row.remove();
+        }
+
+        function deleteEmployee(button) {
+            button.parentElement.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

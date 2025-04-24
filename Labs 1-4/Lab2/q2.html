@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee CRUD Operations</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body class="bg-primary text-white">
+    <header class="bg-success py-3 border-bottom border-dark">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1>Employee Management</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container bg-white text-dark p-4 mt-4 rounded">
+        <h2 class="text-primary">Employee CRUD Operations</h2>
+        <form id="employeeForm">
+            <div class="mb-3">
+                <label for="empName" class="form-label">Employee Name:</label>
+                <input type="text" id="empName" name="empName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="empAge" class="form-label">Employee Age:</label>
+                <input type="number" id="empAge" name="empAge" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="empDept" class="form-label">Department:</label>
+                <select id="empDept" name="empDept" class="form-select" required>
+                    <option value="HR">Human Resource</option>
+                    <option value="Sales">Sales</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="R&D">Research & Development</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Marketing">Marketing</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Employee</button>
+        </form>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Department</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.getElementById('employeeForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('empName').value;
+            const age = document.getElementById('empAge').value;
+            const dept = document.getElementById('empDept').value;
+            const table = document.getElementById('employeeTable');
+            const row = table.insertRow();
+            row.insertCell(0).innerText = name;
+            row.insertCell(1).innerText = age;
+            row.insertCell(2).innerText = dept;
+            const actions = row.insertCell(3);
+            actions.innerHTML = '<button class="btn btn-warning btn-sm me-2" onclick="editEmployee(this)">Edit</button> <button class="btn btn-danger btn-sm" onclick="deleteEmployee(this)">Delete</button>';
+            document.getElementById('employeeForm').reset();
+        });
+        function editEmployee(button) {
+            const row = button.parentElement.parentElement;
+            document.getElementById('empName').value = row.cells[0].innerText;
+            document.getElementById('empAge').value = row.cells[1].innerText;
+            document.getElementById('empDept').value = row.cells[2].innerText;
+            row.remove();
+        }
+        function deleteEmployee(button) {
+            button.parentElement.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

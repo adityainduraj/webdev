@@ -1,0 +1,97 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: rgb(133, 61, 61);
+    font-size: 25px;
+    background-color: rgb(229, 253, 174);
+    margin-bottom: 0;
+}
+
+select {
+    font-size: 20px;
+    color: rgb(114, 105, 85);
+    background-color: rgb(183, 216, 183);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    margin-top: 0;
+    height: 30px;
+    width: 300px;
+    border: 3px solid grey;
+}
+
+.num {
+    color: rgb(114, 105, 85);
+    background-color: rgb(183, 216, 183);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    margin-top: 0;
+    height: 30px;
+    width: 300px;
+    border: 3px solid grey;
+}
+
+.container {
+    padding-left: 20px;
+}
+
+sub {
+    color: rgb(103, 165, 144);
+}
+
+.radio-button {
+    font-size: 20px;
+    color: rgb(44, 161, 122);
+}
+
+#chk {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+}
+
+.pic-text {
+    position: relative;
+    left: 55px;
+    top: 5px;
+}
+
+.txt {
+    width: 500px;
+    height: 100px;
+    color: rgb(114, 105, 85);
+    background-color: rgb(183, 216, 183);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    border: 3px solid grey;
+}
+
+.btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(90, 160, 90);
+    font-size: 20px;
+    padding: 10px 20px;
+    color: yellow;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.contianer {
+    flex: 50%;
+    width: 960px;
+}
+
+.row {
+    display: flex;
+}
+
+.row #cnt {
+    height: 700px;
+    border: 10px dotted rgb(253, 108, 181);
+    padding: 2px 2px;
+}
+
+img {
+    height: 700px;
+}

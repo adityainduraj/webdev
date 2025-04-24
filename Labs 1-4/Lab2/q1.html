@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>Student Info Collection</title>
+    <style>
+        body {
+            font-size: 22px;
+            font-family: "Anek Telugu", sans-serif;
+            color: #fff;
+            background-color: rgb(218, 104, 180);
+        }
+        .container {
+            text-shadow: 0 0 10px black;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 3px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        button {
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            transition: all 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Student Info Collection</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob" name="dob" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Gender:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="nill" value="nill">
+                    <label class="form-check-label" for="nill">Prefer Not to Say</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Hobbies:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="arts" name="hobbies" value="arts">
+                    <label class="form-check-label" for="arts">Arts</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="music" name="hobbies" value="music">
+                    <label class="form-check-label" for="music">Music</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="dance" name="hobbies" value="dance">
+                    <label class="form-check-label" for="dance">Dance</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="embroidery" name="hobbies" value="embroidery">
+                    <label class="form-check-label" for="embroidery">Embroidery</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="extempore" name="hobbies" value="extempore">
+                    <label class="form-check-label" for="extempore">Extempore</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="reading" name="hobbies" value="reading">
+                    <label class="form-check-label" for="reading">Reading</label>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
